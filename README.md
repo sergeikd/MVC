@@ -5,8 +5,6 @@ Task 1: CRUD
 
 1.	The application should contain 2 pages. For more information see figures 1.0 and 2.0;
 
-Note: Mentioned figures contain functionality for all tasks which should be implemented outside of current CRUD subtask;
-
 2.	“Manage user” page should contain following fields:
 
 -	Email;
@@ -27,21 +25,21 @@ No need to implement validation functionality in context of this task.
 
 Task 2: Validation
 
-•	Need to add data annotation based server validation:
+•	Need to add fluent based validation:
 - Email is correct;
 - Email is required;
 - Name and Surname is required;
 - The maximum number of users for one company is N (Configured value).
 
-•	The validation should be replaced to fluent based validation.
-•	Need to implement appropriate client based validation (optional).
 Task 3: Advanced Parameters Binding
 •	Need to add “titles” functionality to the application. For more details see figures 1.0, 2.0 and 4.0.
 
 Task 4: Filters
 
 •	Need to implement custom filters of all mentioned types. Custom filters should log all method executions for the filters (need to override all possible methods and log all calls). The logs should be displayed for all pages of the application. Concept of master page should be applied. Some details of panned view has displayed on the figure 1.0.
+
 Task 5: Asynchronous Controllers
+
 •	Add possibility to upload photo for each user. User list should display small version of uploaded photo (icon) for each user. 
 Details:
 - Photo resizing should be performed dynamical for each icon request. Asynchronous controllers should be applied in appropriate way.
