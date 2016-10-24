@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oxagile.Internal.MVC", "Oxagile.Internal.MVC\Oxagile.Internal.MVC.csproj", "{8C95F045-692E-4617-A77C-4468C3D2C5B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oxagile.Internal.MVC.Entities", "Oxagile.Internal.MVC.Entities\Oxagile.Internal.MVC.Entities.csproj", "{D174247F-4915-4731-BA68-4453F2874789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oxagile.Internal.MVC.DAL", "Oxagile.Internal.MVC.DALCF\Oxagile.Internal.MVC.DAL.csproj", "{C79C423D-FD27-4002-ADC4-A363A4AAF0CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oxagile.Internal.MVC.BL", "Oxagile.Internal.MVC.BL\Oxagile.Internal.MVC.BL.csproj", "{14DDA578-EC28-4E77-AFEF-6FD007F3441A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C95F045-692E-4617-A77C-4468C3D2C5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C95F045-692E-4617-A77C-4468C3D2C5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C95F045-692E-4617-A77C-4468C3D2C5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C95F045-692E-4617-A77C-4468C3D2C5B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D174247F-4915-4731-BA68-4453F2874789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D174247F-4915-4731-BA68-4453F2874789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D174247F-4915-4731-BA68-4453F2874789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D174247F-4915-4731-BA68-4453F2874789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C79C423D-FD27-4002-ADC4-A363A4AAF0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79C423D-FD27-4002-ADC4-A363A4AAF0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79C423D-FD27-4002-ADC4-A363A4AAF0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79C423D-FD27-4002-ADC4-A363A4AAF0CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DDA578-EC28-4E77-AFEF-6FD007F3441A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DDA578-EC28-4E77-AFEF-6FD007F3441A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DDA578-EC28-4E77-AFEF-6FD007F3441A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DDA578-EC28-4E77-AFEF-6FD007F3441A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
