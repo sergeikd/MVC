@@ -1,0 +1,107 @@
+﻿
+@model Oxagile.Internal.MVC.Models.UserManageModel
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>Manage</h2>
+
+@using (Html.BeginForm("Manage", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Surname, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Surname, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Surname, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Titles, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="pull-left">
+                    @if (Model.NewTitles != null)
+                    {
+                        for (int i = 0; i < Model.NewTitles.Count(); i++)
+                        {
+                            @Html.TextBoxFor(m => m.NewTitles[i], new {htmlAttributes = new {@class = "form-control"}})
+                            <br/><br/>
+                        }
+                    }
+
+                    @if (Model.Titles != null)
+                    {
+                        for (int i = 0; i < Model.Titles.Count(); i++)
+                        {
+                            @Html.TextBoxFor(m => m.Titles[i], new { @readonly = "readonly", style = "border:aqua" })
+                            <br /><br />
+                        }
+                    }
+                </div>
+                <div class="col-md-offset-4">
+                    <input type="submit" value="Add" name="action:AddField" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BirthDate, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BirthDate,"", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CompanyId, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CompanyId, Model.Companies, htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.CompanyId, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.PhotoFileName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.PhotoFileName)
+                    <input type="file" name="file" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" name="action:Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+    <div>
+        @Html.ActionLink("Back to Users", "Users")
+    </div>
+
+

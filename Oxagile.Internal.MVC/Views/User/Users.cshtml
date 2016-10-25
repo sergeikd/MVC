@@ -1,0 +1,86 @@
+﻿@model  Oxagile.Internal.MVC.Models.UserPageViewModel
+@using Oxagile.Internal.MVC.Helpers
+@{
+    ViewBag.Title = "Users";
+}
+
+<table class="table">
+    <tr>
+        <td style="text-align: left"><h3>Users</h3></td>
+        <td style="text-align: right; vertical-align: middle">@Html.ActionLink("New User", "Manage", null, new { @class = "btn btn-default" })</td>
+    </tr>
+</table >
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserViewModel.FirstOrDefault().Name)
+        </th>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserViewModel.FirstOrDefault().Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserViewModel.FirstOrDefault().BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserViewModel.FirstOrDefault().Company)
+        </th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    @foreach (var item in Model.UserViewModel)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Surname)
+                @if (item.Titles.Count > 0)
+                {
+                    @:(
+                    foreach (var title in item.Titles)
+                    {
+                        @(title + " ")
+                    }
+                    @:)
+                }
+            </td>
+            <td>
+                @if(item.PhotoFileName != null)
+                {
+                    <img src=@Url.Action("ResizePhoto", "Image", new { fileName = item.PhotoFileName }) alt="no img">
+                }           
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        @Html.ActionLink("Edit", "Manage", new {id = item.Id}) |
+                    </div>
+                    <div class="form-group">
+                        @using (Html.BeginForm("Delete", "User", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.TextBox("id", item.Id, new { hidden = "true", type = "number" })
+                            <input type="submit" value="Delete" class="btn btn-link" onclick="return confirm('Are you sure?');"/>
+                        }
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, x => Url.Action("Users", new { page = x }))
+</div>
+@*@Scripts.Render("~/bundles/users")*@
