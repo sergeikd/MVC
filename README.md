@@ -12,8 +12,6 @@ Task 1: CRUD
 -	Surname;
 -	Birth Date which should be displayed using custom editor template.
 
-No need to implement validation functionality in context of this task.
-
 3.	“List of users” page should contain grid with following columns:
 
 - Name which should be build using following template “{Name} {Surname}”;
